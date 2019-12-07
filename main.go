@@ -689,7 +689,7 @@ func (p *parser) showAndCategorizeTxns(rtxns []Txn) {
 func ledgerFormat(t Txn) string {
 	var b bytes.Buffer
 	b.WriteString(fmt.Sprintf("%s * %s\n", t.Date.Format(stamp), t.Desc))
-	b.WriteString(fmt.Sprintf("    %-32s$ %.2f%s\n", t.To, math.Abs(t.Cur), t.CurName))
+	b.WriteString(fmt.Sprintf("    %-48s$ %.2f%s\n", t.To, math.Abs(t.Cur), t.CurName))
 	b.WriteString(fmt.Sprintf("    %s\n\n", t.From))
 	return b.String()
 }
